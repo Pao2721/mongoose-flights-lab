@@ -1,6 +1,6 @@
 
-import { Destination } from "../models/destination.js"
-import { Flight } from "../models/flight.js"
+import { destination } from "../models/destination.js"
+// import { Flight } from "../models/flight.js"
 
 export {
     newDestination as new,
@@ -12,7 +12,7 @@ function newDestination(req, res) {
     .then(destinations =>{
         res.render("destinations/new", { 
             title: "New Destination", 
-            destinations: destinations})
+            destinations})
     })
     .catch(err => {
         console.log(err)

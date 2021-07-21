@@ -6,5 +6,5 @@ export {
   router
 }
 
-router.get("/new", destinationsCtrl.newDestination)
+router.get("/new", destinationsCtrl.new)
 router.post("/", destinationsCtrl.create)

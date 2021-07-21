@@ -20,7 +20,7 @@
     <% }) %> </div>
     <form action="/flights/<%= flight._id %>/destinations" method="POST">
       <select name="destinationId">
-        <%- destinations.map(p => 
+        <%- destination.map(p => 
           `<option value="${p._id}">${p.airport}</option>`
         ).join('') %>
       </select>
