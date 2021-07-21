@@ -1,11 +1,21 @@
 import mongoose from 'mongoose'
 
 export {
- Flight
+ Flight,
+ 
 }
 
 
 const Schema = mongoose.Schema
+
+const destinationSchema = new Schema({
+ airport: { 
+  type: String,
+  unique: true
+ }
+}, {
+ timestamps: true
+})
 
 const ticketSchema = new Schema({
  seat: {type: String, match: /[A-F][1-9]\d?/},
@@ -19,6 +29,11 @@ const flightSchema = new Schema({
  airport: String,
  flightNo: Number,
  departs: Date,
+ tickets: [ticketSchema],
+ destinations: [{
+  type: Schema.Types.ObjectId,
+  ref:'destination'
+ }]
 }, {
  timestamps: true
 })

@@ -11,7 +11,9 @@
   <nav>
     <ul>
       <li><a href="/flights">ALL FLIGHTS</a></li>
+      <li><a href="/flights"">ADD DESTINATIONS</li>
       <li><a href="/flights/new">ADD FLIGHT</a></li>
+
     </ul>
   </nav>
   <h1>Flight List</h1>
@@ -30,7 +32,8 @@
           <td><%= flight.airline %></td>
           <td><%= flight.airport %></td>
           <td><%= flight.flightNo %></td>
-          <td><%= flight.departs %></td>          
+          <td><%= flight.departs %></td>  
+          <a href="/flights/<%= flight._id %>"">Details</a>        
         </tr>
       <% }) %>
     </tbody>
